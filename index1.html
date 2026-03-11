@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Asitha L | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font for Modern Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- MODERN MINIMALIST CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Clean, modern font */
+            line-height: 1.7;
+            background-color: #fafafa; /* Very light grey background */
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee; /* Subtle border instead of shadow */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        .resume-btn {
+            background-color: #111;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 50px; /* Pill shape */
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .home-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fff; /* Clean white background */
+            padding: 0 20px;
+        }
+
+        .home-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .highlight {
+            color: #111;
+        }
+
+        .text-gradient {
+            color: #666;
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            padding: 12px 35px;
+            border-radius: 50px;
+            margin-top: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #111;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #111;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 80px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #111;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Minimalist underline for titles */
+        h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #111;
+            margin: 10px auto 0;
+        }
+
+        /* --- PROJECTS --- */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #111;
+            font-size: 1.2rem;
+        }
+
+        .tags span {
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-right: 6px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* --- CERTIFICATES (IMAGE GRID) --- */
+        .certificates-section {
+            background-color: #fff;
+            max-width: 100%;
+            padding: 80px 5%;
+        }
+        
+        .cert-inner-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cert-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* This controls the image display */
+        .cert-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover; /* Crops image nicely to fit box */
+            transition: transform 0.5s ease;
+        }
+        
+        .cert-card:hover .cert-image {
+            transform: scale(1.05);
+        }
+
+        .cert-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .cert-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #111;
+        }
+
+        .cert-info p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+/* Style for the secondary/outline button */
+.btn-outline {
+    background: transparent;
+    color: #111;
+    border: 2px solid #111;
+    margin-left: 15px; /* Space between the two buttons */
+}
+
+.btn-outline:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* Responsive fix for mobile so buttons stack vertically */
+@media (max-width: 600px) {
+    .resume-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .btn-outline {
+        margin-left: 0;
+    }
+} 
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Asitha.L </div>
+            <ul class="nav-links">
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#resume">Resume</a></li> <!-- Add this -->
+                <li><a href="Resume1.1.pdf" class="resume-btn" target="_blank">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h1>Hello, I am <br> <span class="highlight">Asitha L</span></h1>
+            <p>I am a <span class="text-gradient">Computer Science Engineering Student</span></p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p style="text-align: center; max-width: 700px; margin: 0 auto; color: #555;">
+                I am a Computer Science Engineering student with a strong focus on developing AI-driven solutions for healthcare, security, and environmental sustainability. I enjoy building projects that focus on real-world problems and improve quality of life. I am seeking opportunities to apply my skills in AI and software development to create innovative, efficient solutions.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <article class="project-card">
+                <h3>MindSync</h3>
+                <p style="color: #666; margin-bottom: 15px;">An AI-based project focused on improving health and environmental well-being. It analyzes real-time data to provide early alerts and helpful insights.</p>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>AI</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h3>Student Portal Web App</h3>
+                <p style="color: #666; margin-bottom: 15px;">A smart portal using AI to understand student performance. It gives personalized feedback, study suggestions, and progress insights.</p>
+                <div class="tags">
+                    <span>Java</span>
+                    <span>Full Stack</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+   <section id="certificates" class="certificates-section">
+    <h2>My Certificates</h2>
+    <div class="certificates-container">
+        
+
+        <article class="certificate-card">
+            <h3>Introduction to Java</h3>
+            <p>Issued by: Sololearn</p>
+            <p>Date: February 2026</p>
+            <div class="cert-link">
+           <a href="Java.pdf" target="_blank" class="btn">View Certificate</a>
+            </div>
+        </article>
+
+     
+        <article class="certificate-card">
+            <h3>Python 101 for Data Science</h3>
+            <p>Issued by: Cognitive Class</p>
+            <p>Date: February 2026</p>
+            <div class="cert-link">
+                <a href="Python.pdf" target="_blank" class="btn">View Certificate</a>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+<!-- RESUME SECTION -->
+<section id="resume" class="resume-section">
+    <h2>Resume</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 30px;">
+        You can view my resume directly or download a PDF copy below.
+    </p>
+    <div class="resume-buttons">
+        <!-- View Button: Opens in new tab -->
+        <a href="Resume1.1.pdf" target="_blank" class="btn">View Resume</a>
+        
+        <!-- Download Button: Forces download -->
+        <a href="Resume1.1.pdf" download="Asitha_Resume.pdf" class="btn btn-outline">Download Resume</a>
+    </div>
+</section>
+
+
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <p style="text-align: center; margin-bottom: 10px;">Email: asitha1171005@gmail.com</p>
+        <p style="text-align: center; margin-bottom: 10px;">LinkedIn: www.linkedin.com/in/asitha171005</p>
+        <p style="text-align: center;">GitHub: https://github.com/asitha171005</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Asitha L. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
